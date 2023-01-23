@@ -803,7 +803,8 @@ PivotData.propTypes = {
   getRowKeys: PropTypes.func,
   getColKeys: PropTypes.func,
   getAggregator: PropTypes.func,
-  constructor: PropTypes.func
+  constructor: function(props, propName, componentName) {
+  }
 };
 
 export {
