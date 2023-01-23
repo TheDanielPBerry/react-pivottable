@@ -800,11 +800,10 @@ PivotData.propTypes = {
   derivedAttributes: PropTypes.objectOf(PropTypes.func),
   rowOrder: PropTypes.oneOf(['key_a_to_z', 'value_a_to_z', 'value_z_to_a']),
   colOrder: PropTypes.oneOf(['key_a_to_z', 'value_a_to_z', 'value_z_to_a']),
-  getRowKeys: PropTypes.func,
-  getColKeys: PropTypes.func,
-  getAggregator: PropTypes.func,
-  constructor: function(props, propName, componentName) {
-  }
+  getRowKeys: PropTypes.func.isRequired,
+  getColKeys: PropTypes.func.isRequired,
+  getAggregator: PropTypes.func.isRequired,
+  constructor: PropTypes.func.isRequired
 };
 
 export {
