@@ -585,10 +585,8 @@ Data Model class
 */
 
 var PivotData = function () {
-  function PivotData() {
+  function PivotData(inputProps) {
     var _this = this;
-
-    var inputProps = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     _classCallCheck(this, PivotData);
 
@@ -797,9 +795,9 @@ var PivotData = function () {
 
       try {
         for (var _iterator4 = Array.from(this.props.rows)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-          var _x16 = _step4.value;
+          var _x15 = _step4.value;
 
-          rowKey.push(_x16 in record ? record[_x16] : 'null');
+          rowKey.push(_x15 in record ? record[_x15] : 'null');
         }
       } catch (err) {
         _didIteratorError4 = true;
@@ -1012,6 +1010,10 @@ PivotData.defaultProps = {
 
 PivotData.propTypes = {
   data: _propTypes2.default.oneOfType([_propTypes2.default.array, _propTypes2.default.object, _propTypes2.default.func]).isRequired,
+  getRowKeys: _propTypes2.default.func.isRequired,
+  getColKeys: _propTypes2.default.func.isRequired,
+  getAggregator: _propTypes2.default.func.isRequired,
+  constructor: _propTypes2.default.func.isRequired,
   aggregatorName: _propTypes2.default.string,
   cols: _propTypes2.default.arrayOf(_propTypes2.default.string),
   rows: _propTypes2.default.arrayOf(_propTypes2.default.string),
@@ -1020,11 +1022,7 @@ PivotData.propTypes = {
   sorters: _propTypes2.default.oneOfType([_propTypes2.default.func, _propTypes2.default.objectOf(_propTypes2.default.func)]),
   derivedAttributes: _propTypes2.default.objectOf(_propTypes2.default.func),
   rowOrder: _propTypes2.default.oneOf(['key_a_to_z', 'value_a_to_z', 'value_z_to_a']),
-  colOrder: _propTypes2.default.oneOf(['key_a_to_z', 'value_a_to_z', 'value_z_to_a']),
-  getRowKeys: _propTypes2.default.func.isRequired,
-  getColKeys: _propTypes2.default.func.isRequired,
-  getAggregator: _propTypes2.default.func.isRequired,
-  constructor: _propTypes2.default.func.isRequired
+  colOrder: _propTypes2.default.oneOf(['key_a_to_z', 'value_a_to_z', 'value_z_to_a'])
 };
 
 exports.aggregatorTemplates = aggregatorTemplates;
