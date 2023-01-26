@@ -99,7 +99,7 @@ declare class PivotData implements Pivot {
     data: TableInput;
     getColKeys: function;
     getRowKeys: function;
-    getAggregators: function;
+    getAggregator: function;
 }
 
 // PivotData is not an "utility" but the underlying implementation of the core entity,
